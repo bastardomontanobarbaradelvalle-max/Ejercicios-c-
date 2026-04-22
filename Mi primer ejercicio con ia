@@ -1,0 +1,49 @@
+#include <iostream>
+#include <iomanip> // Necesaria para formatear los números (dos decimales)
+
+using namespace std;
+
+int main() {
+    // Definición de constantes para facilitar cambios futuros
+    const float PRECIO_UNITARIO = 250.0;
+    const float TASA_IVA = 0.16;
+    const float TASA_DESCUENTO = 0.05; // 5% de descuento
+    const float UMBRAL_DESCUENTO = 1500.0;
+
+    // Declaración de variables
+    int cantidad;
+    float subtotal_bruto, subtotal_final, descuento = 0.0, iva, total;
+
+    cout << "--- SISTEMA DE FACTURACION ---" << endl;
+    cout << "Ingrese la cantidad del producto deseado: ";
+    cin >> cantidad;
+
+    // Cálculo inicial
+    subtotal_bruto = cantidad * PRECIO_UNITARIO;
+    subtotal_final = subtotal_bruto;
+
+    // Aplicación de política de descuentos
+    if (subtotal_bruto > UMBRAL_DESCUENTO) {
+        descuento = subtotal_bruto * TASA_DESCUENTO;
+        subtotal_final = subtotal_bruto - descuento;
+    }
+
+    // Cálculo de impuestos y total final
+    iva = subtotal_final * TASA_IVA;
+    total = subtotal_final + iva;
+
+    // Visualización formateada de la factura
+    cout << fixed << setprecision(2); // Asegura dos decimales
+    cout << "\n-----------------------------" << endl;
+    cout << "        FACTURA FINAL        " << endl;
+    cout << "-----------------------------" << endl;
+    cout << "Subtotal bruto:   " << subtotal_bruto << " bs" << endl;
+    cout << "Descuento (5%):   " << descuento << " bs" << endl;
+    cout << "Subtotal neto:    " << subtotal_final << " bs" << endl;
+    cout << "IVA (16%):        " << iva << " bs" << endl;
+    cout << "-----------------------------" << endl;
+    cout << "TOTAL A PAGAR:    " << total << " bs" << endl;
+    cout << "-----------------------------" << endl;
+
+    return 0;
+}
