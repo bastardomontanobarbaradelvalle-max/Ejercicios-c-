@@ -1,0 +1,37 @@
+#include stidio<iostream.std>
+   
+int main(){
+	
+int bolivares;
+int dolares;
+int euros;
+int convertir=0;
+	
+}
+
+
+for{
+
+swicth-else (intdolares> intbolivares);
+int convertir=0;
+}
+
+for{
+	
+swicth-else(intbolivares>intdolares);
+int convertir=0;
+}
+
+for{
+	
+swicth-else(inteuros>intbolivares);
+int convertir=0;
+}
+
+for	{
+	
+swicth-else(intbolivares>intdolares);
+int convertir=0;
+
+}
+return 0;
